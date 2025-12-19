@@ -1,0 +1,253 @@
+.confirmation-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  position: relative;
+}
+
+.success-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.confirmation-card {
+  background: white;
+  border-radius: 10px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: #4caf50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin: 0 auto 20px;
+  font-weight: bold;
+}
+
+.confirmation-card h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.booking-details {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.bill-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bill-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 16px;
+}
+
+.detail-value {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bill-total {
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.bill-total .detail-label,
+.bill-total .detail-value {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.grand-total {
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.grand-total .detail-label,
+.grand-total .detail-value {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.print-btn {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.print-btn.movie-print {
+  background: #28a745;
+  color: white;
+}
+
+.print-btn.movie-print:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.print-btn.snacks-print {
+  background: #ffc107;
+  color: #333;
+}
+
+.print-btn.snacks-print:hover {
+  background: #e0a800;
+  transform: translateY(-2px);
+}
+
+.print-btn.full-print {
+  background: #007bff;
+  color: white;
+}
+
+.print-btn.full-print:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.back-btn {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Print styles */
+@media print {
+  .confirmation-container {
+    background: white;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .success-notification {
+    display: none;
+  }
+
+  .confirmation-card {
+    box-shadow: none;
+    padding: 20px;
+    max-width: none;
+  }
+
+  .confirmation-actions {
+    display: none;
+  }
+
+  .success-icon {
+    display: none;
+  }
+
+  .confirmation-card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .booking-details {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+
+  .bill-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .detail-row {
+    break-inside: avoid;
+  }
+}
+
